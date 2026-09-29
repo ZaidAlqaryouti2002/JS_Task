@@ -161,3 +161,176 @@ try{
   
 }
 
+/* Exercise 7 */
+const square = num => num * num;
+const isEven = num => num % 2 === 0;
+
+const calculateTotalPrice = products => products.reduce((total, item) => total + item.price, 0);
+
+const numbers = [1, 2, 3, 4, 5, 6];
+
+const squaredNumbers = numbers.map(square);
+console.log("Squared Numbers:", squaredNumbers);
+
+const evenNumbers = numbers.filter(isEven);
+console.log("Even Numbers:", evenNumbers);
+
+const products = [
+  { name: "Controller", price: 60 },
+  { name: "Headset", price: 40 },
+  { name: "Game", price: 70 }
+];
+
+const totalPrice = calculateTotalPrice(products);
+console.log("Total Price:", totalPrice);
+
+/* Exercise 8 */
+const userProfile = {
+  name: "Zaid",
+  email: "zaid@myemail.com",
+  age: 24,
+  address: "Amman, Jordan"
+};
+
+const{name, email, age}= userProfile;
+
+console.log(name);
+console.log(email);
+console.log(age);
+
+const{address: myAddress}= userProfile;
+console.log(myAddress);
+
+const skills= ["Gaming", "Programming", "Team Work"];
+const [firstSkill, secondSkill, thirdSkill]= skills;
+
+console.log(firstSkill);
+console.log(secondSkill);
+console.log(thirdSkill);
+
+function createUser(name= "ZaidAlabed", email= "zaid@myemail.com", age= 25){
+  return "Hello, your name is "+ name+ " , your age is "+ age+ " , and your email is : "+ email;
+} 
+
+console.log(createUser());
+
+console.log(createUser("Ali", "ali@email.com"));
+
+
+/* Exercise 9 */
+
+const group1 =["Zaid", "Ali", "Mohammed"];
+const group2 =["Omar", "Ahmad", "Sara"];
+
+const allEnrolled= [...group1, ...group2];
+
+console.log(allEnrolled);
+
+function calcAverage(...grades){
+  const sum= grades.reduce((total,grade ) => total +grade,0);
+
+  const average = sum/grades.length;
+
+  return average;
+}
+
+console.log("Total Average: "+ calcAverage(86,98,76,45));
+console.log("Total Average: "+ calcAverage(67, 86, 97));
+
+const studentIds = [101, 102, 101, 103, 102, 104];
+const uniqueIdSet = new Set(studentIds);
+const uniqueIdArray= [...uniqueIdSet];
+
+console.log("Unique Id's Are: ", uniqueIdArray);
+
+
+const studentsGrades = new Map();
+studentsGrades.set(101, 98);
+studentsGrades.set(102, 76);
+
+console.log(studentsGrades.get(101));
+
+const deletedStudent= studentsGrades.delete(102);
+
+const updatedStudent= studentsGrades.set(101, 100);
+
+console.log("updated student: ", updatedStudent);
+
+const studentGradesArray = [...studentsGrades];
+
+console.log("New Map Array : ", studentGradesArray);
+
+
+
+
+
+
+
+
+/* Exercise 10 */
+
+const studentsArr = [
+  { id: 123, name: "Ali", age: 25, grade: 65 },
+  { id: 122, name: "Zaid", age: 24, grade: 70 },
+  { id: 124, name: "Ahmad", age: 22, grade: 45 },
+  { id: 125, name: "Sara", age: 23, grade: 88 },
+  { id: 126, name: "Omar", age: 21, grade: 49 }
+];
+
+const container =document.getElementById("reports-container");
+
+let htmlReports= "";
+
+for (const student of studentsArr){
+
+  htmlReports+= `<div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; border-radius: 6px;">
+      <h3>Name: ${student.name}</h3>
+      <p>ID: ${student.id}</p>
+      <p>Grade: ${student.grade}</p>
+      <p>Status: ${student.grade >= 50 ? "Pass" : "Fail"}</p>
+    </div>`
+
+}
+
+container.innerHTML =htmlReports;
+
+/* Exercise 11 */
+
+class Person {
+
+  constructor(name, email){
+    this.name=name;
+    this.email=email;
+  }
+
+  getInfo(){
+    return "The name is : "+this.name+ " The Email is : "+ this.email;
+  }
+}
+
+class Student extends Person{
+  constructor(name, email, studentID){
+    super(name, email);
+
+    this.studentID=studentID;
+  }
+}
+
+class Instructor extends Person {
+  constructor(name, email, department) {
+    super(name, email);
+    this.department = department;
+  }
+
+  getInfo() {
+    return "The name is : " + this.name + " The Email is : " + this.email + " The Department is : " + this.department;
+  }
+}
+
+const person1 = new Person("Omar", "omar@email.com");
+const student1 = new Student("Zaid", "zaid@email.com", 101);
+const instructor1 = new Instructor("Ahmad", "ahmad@email.com", "CS");
+
+console.log(person1.getInfo());
+console.log(student1.getInfo());
+console.log(instructor1.getInfo());
