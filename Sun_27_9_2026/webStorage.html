@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Storage Playground</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; line-height: 1.6; }
+    .input-group { margin-bottom: 15px; }
+    input { padding: 5px; margin-right: 5px; }
+    button { padding: 5px 10px; margin-right: 5px; cursor: pointer; }
+    #display-area { margin-top: 20px; padding: 15px; border: 1px solid #ccc; background: #f9f9f9; }
+    #action-result { color: green; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h2>Web Storage Playground</h2>
+
+  <div class="input-group">
+    <input type="text" id="key-input" placeholder="Enter Key">
+    <input type="text" id="value-input" placeholder="Enter Value">
+  </div>
+  
+  <div class="input-group">
+    <input type="number" id="index-input" placeholder="Enter Index (e.g., 0)">
+  </div>
+
+  <div class="input-group">
+    <button id="btn-save">Save (setItem)</button>
+    <button id="btn-retrieve">Retrieve (getItem)</button>
+    <button id="btn-remove">Remove (removeItem)</button>
+    <button id="btn-clear">Clear All (clear)</button>
+    <button id="btn-getkey">Get Key by Index</button>
+  </div>
+
+  <div id="display-area">
+    <h3>Storage Contents (Total items: <span id="storage-length">0</span>)</h3>
+    <ul id="storage-list"></ul>
+    <p id="action-result"></p>
+  </div>
+
+  <script src="webStorage.js"></script>
+</body>
+</html>

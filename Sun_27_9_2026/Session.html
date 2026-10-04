@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Step Form</title>
+    <link rel="stylesheet" href="Session.css">
+</head>
+<body>
+
+    <div class="form-container">
+        <!-- STEP 1 -->
+        <div id="step-1" class="step">
+            <h2>Step 1: Personal Info</h2>
+            <input type="text" id="fullName" placeholder="Full Name">
+            <input type="email" id="email" placeholder="Email Address">
+            <div class="buttons">
+                <button onclick="nextStep(2)">Next</button>
+            </div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div id="step-2" class="step hidden">
+            <h2>Step 2: Educational Info</h2>
+            <input type="text" id="degree" placeholder="Degree">
+            <input type="text" id="university" placeholder="University Name">
+            <div class="buttons">
+                <button class="back-btn" onclick="prevStep(1)">Back</button>
+                <button onclick="nextStep(3)">Next</button>
+            </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div id="step-3" class="step hidden">
+            <h2>Step 3: Review & Confirm</h2>
+            <div id="review-box"></div>
+            <div class="buttons">
+                <button class="back-btn" onclick="prevStep(2)">Back</button>
+                <button onclick="submitForm()">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="Session.js"></script>
+</body>
+</html>

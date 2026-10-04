@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies Manager</title>
+    <link rel="stylesheet" href="cookies.css">
+</head>
+<body class="light">
+
+    <div class="container">
+        <h1 id="greeting">Welcome to the Preferences Manager</h1>
+        
+        <div class="settings">
+            <label for="theme-select">Theme:</label>
+            <select id="theme-select">
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+            </select>
+        </div>
+
+        <div class="settings">
+            <label for="lang-select">Language:</label>
+            <select id="lang-select">
+                <option value="en">English</option>
+                <option value="ar">Arabic</option>
+            </select>
+        </div>
+
+        <div class="buttons">
+            <button id="save-btn">Save Preferences</button>
+            <button id="delete-btn">Clear Cookies</button>
+        </div>
+
+        <p id="status-msg"></p>
+    </div>
+
+    <script src="cookies.js"></script>
+</body>
+</html>
